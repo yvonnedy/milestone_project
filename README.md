@@ -1,4 +1,20 @@
-# Milestone Project     
+# Milestone Project    
+    
+## Project Summary    
+    
+The project is designed to use the `Titanic` dataset to analyze if different passenger class plays a role in survivorship. My hypothesis is more passengers in the first class survived than those in the second and third classes.    
+          
+## How To Run Data Analysis    
+   
+The Scripts in the `src` directory should be run in the following order:    
+    
+| Script Name | What To Create | Usage |
+| ---- | ---- | --- |
+|download_data.R|glimpses the titanic data and saves it locally|Rscript src/download_data.R https://raw.github.ubc.ca/ubc-mds-2017/datasets/master/data/titanic.csv?token=AAADoDScWJc96cKeqViGL4nHskjD5Mu3ks5aLaO8wA%3D%3D data/Titanic.csv|
+|analyze_data.R|filters survived people in each passager class and writes the result to CSV|Rscript src/analyze_data.R data/Titanic.csv results/filter_survived.csv|
+|plot_data.R|generates a figure of total number of survivors and saves the plot to the results directory|Rscript src/plot_data.R results/filter_survived.csv results/count_survived.png|
+|summary_report.Rmd|generates a summary report|Rscript -e 'ezknitr::ezknit("src/summary_report.Rmd", out_dir = "doc")'|         
+              
     
 ## Indentify Dataset  
 
