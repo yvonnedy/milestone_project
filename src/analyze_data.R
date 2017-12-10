@@ -2,11 +2,10 @@
 # analyze_data.R
 # Ying Dong, Dec 2017
 #
-# This script calculates a specified summary stat for a specified 
-# variable from the Titanic.csv file. 
-# This script takes input filename and output filename as the variable arguments. 
+# This script filters survived people in each passager class.
+# This script takes an input filename and an output filename as the variable arguments. 
 # 
-# Usage: Rscript src/analyze_data.R data/Titanic.csv results/count_survived.csv
+# Usage: Rscript src/analyze_data.R data/Titanic.csv results/filter_survived.csv
 
 # read in command line arguments
 args <- commandArgs(trailingOnly = TRUE)
@@ -16,12 +15,14 @@ output_file <- args[2]
 # read in data
 titanic <- read.csv(input_file, header = TRUE, sep = ",")
 
-# count survived number in each class
+# import package
 library(tidyverse)
+
+# find survived people in each passager class
 count_survived <- titanic %>% 
-  select(pclass, survived) %>% 
-  group_by(pclass) %>%
-  summarise(survived_number = n())
+  mutate(pclass = as.factor(pclass)) %>% 
+  filter(survived == 1) %>% 
+  group_by(pclass)
 
 # write data to the results directory in CSV
 write.table(count_survived, file = output_file, sep = ",", row.names=T)
