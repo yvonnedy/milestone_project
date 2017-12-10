@@ -3,7 +3,7 @@
 # Ying Dong, Dec 2017
 #
 # This script filters survived people in each passager class 
-# and write the result to the results directory in CSV. 
+# and writes the result to the results directory in CSV. 
 # This script takes an input filename and an output filename as the variable arguments. 
 # 
 # Usage: Rscript src/analyze_data.R data/Titanic.csv results/filter_survived.csv
