@@ -1,0 +1,27 @@
+---
+title: "Summary Report"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Original Data
+
+```{r}
+original <- read.csv("../data/Titanic.csv")
+head(original)
+```
+
+## Filtered Data
+
+```{r}
+filtered <- read.csv("../results/filter_survived.csv")
+head(filtered)
+```
+
+## Figure   
+    
+![count survivors](../results/count_survived.png) 
+
