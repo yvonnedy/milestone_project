@@ -65,3 +65,5 @@ Figure
 ------
 
 ![count survivors](../results/count_survived.png)
+
+> According to the figure above, we could find that passenger class plays a role in survivorship, but the effect of it is not that significant.
