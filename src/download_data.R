@@ -5,7 +5,7 @@
 # This script glimpses the titanic data and saves it locally.
 # This script takes a URL and output filename as the variable arguments.
 #
-# Usage: Rscript src/download_data.R "https://raw.github.ubc.ca/ubc-mds-2017/datasets/master/data/titanic.csv?token=AAADqC0ANzUKk2ZCPXF4Sb13ucDojAHxks5aNpHbwA%3D%3D" data/Titanic.csv
+# Usage: Rscript src/download_data.R "https://raw.github.ubc.ca/ubc-mds-2017/datasets/master/data/titanic.csv?token=AAADoKNo_xGqx3JvHFN3HfqPrPTi0EJPks5aP-yFwA%3D%3D" data/Titanic.csv
 
 # read in command line arguments
 args <- commandArgs(trailingOnly = TRUE)
@@ -28,4 +28,3 @@ main <- function(){
 
 # call main funtion
 main()
-
