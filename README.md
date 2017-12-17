@@ -1,43 +1,66 @@
-# Milestone Project    
+# Analysis On Titanic Survivorship   
     
-## Project Summary    
+## Overview      
+     
+The project is designed to analyze if passenger class played a role in survivorship of Titanic.    
     
-The project is designed to use the `Titanic` dataset to analyze if different passenger class plays a role in survivorship. My hypothesis is more passengers in the first class survived than those in the second and third classes.    
-          
-## How To Run Data Analysis    
+#### Indentify Dataset
+    
+This analysis accesses the dataset of [`Titanic`](https://raw.github.ubc.ca/ubc-mds-2017/datasets/master/data/titanic.csv?token=AAADoFSBnbVYwdHdFU7NfKU4wKwjWIJYks5aP_9ZwA%3D%3D) from the list of [MDS datasets](https://github.ubc.ca/ubc-mds-2017/datasets). This file contains data for 1310 of the real Titanic passengers. The columns describe different attributes about the person including whether they survived, their passenger class, age, sex, the fare they paid and so on. Passenger class (`pclass`) and survivorship (`survived`) are used to conduct the analysis.
+
+#### Hypothesis      
+    
+My hypothesis is more passengers in the first class survived than those in the second and third classes because the rich have high social status and enjoy lots of privileges at that time. 
+ 
+#### Result    
+    
+The result of this analysis confirms that passager class played a part in survivorship. However, this effect is not very significant as I thought before. One possible explanation could be that preference was given to women and children in lower classes.    
+ 
+
+## Usage     
    
-The Scripts in the `src` directory should be run in the following order:    
-    
-| Script Name | What To Create | Usage |
-| ---- | ---- | --- |
-|download_data.R|glimpses the titanic data and saves it locally|Rscript src/download_data.R https://raw.github.ubc.ca/ubc-mds-2017/datasets/master/data/titanic.csv?token=AAADoDScWJc96cKeqViGL4nHskjD5Mu3ks5aLaO8wA%3D%3D data/Titanic.csv|
-|analyze_data.R|filters survived people in each passager class and writes the result to CSV|Rscript src/analyze_data.R data/Titanic.csv results/filter_survived.csv|
-|plot_data.R|generates a figure of total number of survivors and saves the plot to the results directory|Rscript src/plot_data.R results/filter_survived.csv results/count_survived.png|
-|summary_report.Rmd|generates a summary report|Rscript -e 'ezknitr::ezknit("src/summary_report.Rmd", out_dir = "doc")'|         
-              
-    
-## Indentify Dataset  
+To run this analyis, clone this repository, navigate to the project's root directory and follow methods as stated below:
+   
+#### Run the analysis using Docker    
 
-Choose a public dataset from the web that you are interested in to carry out a small data analysis. You may also use any dataset we have previously worked with in MDS.      
-    
-> I would like to choose the dataset of `Titanic` to carry out the data analysis.    
-     
-## Question
+1. Use launchpad/Finder/Start menu/etc to find and launch Docker.     
 
-With that dataset, identify a question you would like to ask from it that could be answered by some simple analysis and visualization.     
+2. Open command line (terminal/GitBash) and type 
+`docker pull yvonnedy/milestone_project`, verify that the Docker image successfully pulled locally.          
      
-> The question that I would like to ask from the dataset is, does passenger class play a role in survivorship?     
-      
-## Hypothesis         
-          
-Generate a hypothesis for your question.      
+3. Then enter the following commands to run the analysis using Docker:    
+`docker run --rm -v <LOCAL PATH TO THE PROJECT REPO>:/home/milestone_project yvonnedy/milestone_project make -C '/home/milestone_project' clean
+`   
+`docker run --rm -v <LOCAL PATH TO THE PROJECT REPO>:/home/milestone_project yvonnedy/milestone_project make -C '/home/milestone_project'
+`
+                              
+#### Run the analysis using Make    
     
-> My hypothesis is more passengers in the first class survived than those in the second and third classes because the rich have high social status and enjoy lots of privileges at that time.    
-    
-## Plan         
-         
-Suggest how you might summarize the data to show this as a table or a number, as well as how you might show this as a visualization.    
+1. After navigating to the project's root direcoty, open command line       (terminal/GitBash) and type `make clean` to clean up intermediate files generated in the previous run.         
+
+2. Type `make all` to run the full analysis.     
      
-> For summarizing and visualizing the data, I plan to count the surviving number in each class respectively, and visualize these data into a bar chart by using `ggplot`.    
-           
-           
+   
+## Dependencies 
+     
+This project was developed under the following condition:    
+    
+```
+R version 3.4.1 (2017-06-30)
+```      
+   
+Dependencies for this project:   
+   
+- ggplot2 2.2.1     
+- purrr   0.2.4
+- tibble  1.3.4     
+- dplyr   0.7.4
+- tidyr   0.7.2     
+- stringr 1.2.0
+- readr   1.1.1     
+- forcats 0.2.0
+     
+#### Dependency Diagram of The Makefile       
+   
+![](Makefile.png)
+        
