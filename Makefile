@@ -9,8 +9,8 @@
 all: doc/summary_report.md
 
 # make data
-data/Titanic.csv: https://raw.github.ubc.ca/ubc-mds-2017/datasets/master/data/titanic.csv?token=AAADoDScWJc96cKeqViGL4nHskjD5Mu3ks5aLaO8wA%3D%3D src/download_data.R
-	Rscript src/download_data.R https://raw.github.ubc.ca/ubc-mds-2017/datasets/master/data/titanic.csv?token=AAADoDScWJc96cKeqViGL4nHskjD5Mu3ks5aLaO8wA%3D%3D data/Titanic.csv
+data/Titanic.csv: 
+	Rscript src/download_data.R "https://raw.github.ubc.ca/ubc-mds-2017/datasets/master/data/titanic.csv?token=AAADqC0ANzUKk2ZCPXF4Sb13ucDojAHxks5aNpHbwA%3D%3D" data/Titanic.csv
 
 # filter data
 results/filter_survived.csv: data/Titanic.csv src/analyze_data.R
