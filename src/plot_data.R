@@ -13,16 +13,23 @@ args <- commandArgs(trailingOnly = TRUE)
 input_file <- args[1]
 output_file <- args[2]
 
-# read in data
-filter_survived <- read.csv(input_file, header = TRUE, sep = ",")
+# define main function
+main <- function(){
+  # read in data
+  filter_survived <- read.csv(input_file, header = TRUE, sep = ",")
 
-# import package
-library(ggplot2)
+  # import package
+  library(ggplot2)
 
-# plot the bar chart
-count_survived <- ggplot(filter_survived, aes(pclass)) +
-  geom_bar() +
-  labs(title = "Total Number of Survivors In Each Class", x = "Passenger Class", y = "Number of Survivors")
+  # plot the bar chart
+  count_survived <- ggplot(filter_survived, aes(pclass)) +
+    geom_bar() +
+    labs(title = "Total Number of Survivors In Each Class", x = "Passenger Class", y = "Number of Survivors")
 
-# write the figure to file
-ggsave(output_file, count_survived)
+  # write the figure to file
+  ggsave(output_file, count_survived)
+  
+}
+
+# call main function
+main()
