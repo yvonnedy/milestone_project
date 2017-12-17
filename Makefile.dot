@@ -1,0 +1,19 @@
+digraph G {
+n2[label="all", color="red"];
+n5[label="data/Titanic.csv", color="green"];
+n3[label="doc/summary_report.md", color="green"];
+n8[label="results/count_survived.png", color="green"];
+n6[label="results/filter_survived.csv", color="green"];
+n7[label="src/analyze_data.R", color="green"];
+n9[label="src/plot_data.R", color="green"];
+n4[label="src/summary_report.Rmd", color="green"];
+n3 -> n2 ; 
+n5 -> n3 ; 
+n8 -> n3 ; 
+n6 -> n3 ; 
+n4 -> n3 ; 
+n6 -> n8 ; 
+n9 -> n8 ; 
+n5 -> n6 ; 
+n7 -> n6 ; 
+}
