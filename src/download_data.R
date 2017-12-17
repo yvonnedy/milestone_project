@@ -12,13 +12,20 @@ args <- commandArgs(trailingOnly = TRUE)
 URL <- args[1]
 output_file <- args[2]
 
-# read in data
-titanic <- read.csv(URL)
-    
-# glimpse first 6 rows of data
-head(titanic)
-    
-# save the data into the data directory
-write.csv(titanic, file = output_file)
+# define main function
+main <- function(){
 
+  # read in data
+  titanic <- read.csv(URL)
+    
+  # glimpse first 6 rows of data
+  head(titanic)
+    
+  # save the data into the data directory
+  write.csv(titanic, file = output_file)
+
+}
+
+# call main funtion
+main()
 
