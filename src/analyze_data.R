@@ -13,17 +13,24 @@ args <- commandArgs(trailingOnly = TRUE)
 input_file <- args[1]
 output_file <- args[2]
 
-# read in data
-titanic <- read.csv(input_file, header = TRUE, sep = ",")
+# define main function
+main <- function(){
+  
+  # read in data
+  titanic <- read.csv(input_file, header = TRUE, sep = ",")
 
-# import package
-library(tidyverse)
+  # import package
+  library(tidyverse)
 
-# find survived people in each passager class
-count_survived <- titanic %>% 
+  # find survived people in each passager class
+  count_survived <- titanic %>% 
   mutate(pclass = as.factor(pclass)) %>% 
   filter(survived == 1) %>% 
   group_by(pclass)
 
-# write data to the results directory in CSV
-write.table(count_survived, file = output_file, sep = ",", row.names=T)
+  # write data to the results directory in CSV
+  write.table(count_survived, file = output_file, sep = ",", row.names=T)
+
+}
+
+main()
