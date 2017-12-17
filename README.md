@@ -19,7 +19,7 @@ The result of this analysis confirms that passager class played a part in surviv
 
 ## Usage     
    
-To run this analyis, clone this repository, navigate to the project's root directory and follow methods as stated below:
+To run this analysis, clone this repository, navigate to the project's root directory and follow methods as stated below:
    
 #### Run the analysis using Docker    
 
@@ -36,7 +36,7 @@ To run this analyis, clone this repository, navigate to the project's root direc
                               
 #### Run the analysis using Make    
     
-1. After navigating to the project's root direcoty, open command line       (terminal/GitBash) and type `make clean` to clean up intermediate files generated in the previous run.         
+1. After navigating to the project's root directory, open command line       (terminal/GitBash) and type `make clean` to clean up intermediate files generated in the previous run.         
 
 2. Type `make all` to run the full analysis.     
      
