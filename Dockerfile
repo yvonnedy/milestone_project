@@ -1,5 +1,5 @@
 # Docker file for Titanic survivorship
-# Ying Dong, Dec, 2017
+# Ying Dong, Dec 2017
 
 # use rocker/tidyverse as the base image
 FROM rocker/tidyverse
